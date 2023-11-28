@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+</head>
+<body style="margin-left: 40%; padding-top: 10%;">
+    <h2>Perform sorting of an array in descending order.</h2>
+
+    <p>Click the button to demonstrate the prompt box.</p>
+
+    <button onclick="myFunc()">Click me to enter an array for Sorting.</button>
+    
+    <p id = "Original Array"></p>
+    <p id = "Sorted Array"></p>
+ 
+    <script >
+    function bubbleSortDescending(arr) {
+    var n = arr.length; // To store length of an array
+    var swap;
+
+    do {
+        swap = false;
+        for (var i = 0; i < n - 1; i++) {
+            if (arr[i] < arr[i + 1]) {  // Swap elements if they are in the wrong order
+               
+                var temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swap = true;
+            }
+        }
+    } while (swap);
+
+    return arr; // Return sorted Array
+}
+function myFunc (){
+    
+    let numbers = prompt("Enter an Array for Sorting"); // User Input
+    let Arr= numbers.split(","); // Convert into Array
+    
+    var sortedArray = bubbleSortDescending(Arr); // Sorting in descending order using Bubble Sort
+    document.getElementById("Original Array").innerHTML="Original Array:"+numbers;
+    document.getElementById("Sorted Array").innerHTML="Sorted Array:"+sortedArray;
+}
+    </script>
+</body>
+</html>
