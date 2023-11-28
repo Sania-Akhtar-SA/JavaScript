@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse</title>
+</head>
+<body style="margin-left: 40%; padding-top: 10%;">
+    <h2>Reverse each word in the sentence.</h2>
+
+    <p>Click the button to demonstrate the prompt box.</p>
+
+    <button onclick="myFunc()">Click me to enter a sentence for Reverse.</button>
+    
+    <p id = "Original Input"></p>
+    <p id = "Reverse Input"></p>
+
+    <script>
+
+    var rev="";
+
+    function reverseWordsWithoutReverse(sentence) {
+
+    var words = sentence.split(' '); // Split the string into words
+    for (var i = 0; i < words.length; i++) { // Iterate through each word and reverse its characters
+        words[i] = Reverse(words[i]);
+    }
+    return rev; // String with each word in reverse form without using reverse function.
+  }
+  function Reverse(str){
+  var revword="";
+    for (let i = str.length -1; i >=0 ; i--){ // Iterate through word and reverse its characters
+      if (str[i]!=" "){
+      revword = revword + str[i] ; 
+      }
+     }
+    rev =rev + revword + " "; // Store reverse word in sequence 
+  }
+  function myFunc(){
+    var inputSentence = prompt("Enter a sentence:"); // Take an Input from User
+    var reversedSentence = reverseWordsWithoutReverse(inputSentence); // Function Calling
+
+    document.getElementById("Original Input").innerHTML="The Original statement is :"+inputSentence;
+    document.getElementById("Reverse Input").innerHTML="The Reverse statement is :"+reversedSentence;
+  }
+    </script>
+</body>
+</html>
